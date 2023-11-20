@@ -27,13 +27,13 @@ interface MobileHeaderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const NavLink = ({ className, onClick }: NavLinkProps) => {
-  const menuItems = ["grafico", "noticias", "ferramentas", "sobre nos", "tutoriais"];
+  const menuItems = ["grafico", "noticias", "ferramentas", "sobre", "tutoriais"];
   return (
     <ol className="flex flex-col gap-5 lg:flex-row lg:gap-24 items-center">
       {menuItems.map((item) => (
         <li className="[counter-increment:item] items-reveal" key={item}>
           <Link
-            href={`#`}
+            href={`/${item}`}
             className={`relative group ${className ?? ""}`}
             onClick={onClick}
           >
@@ -122,15 +122,15 @@ export function Header() {
 
   return (
     <header
-      className={`transition duration-300 text-lg w-full backdrop-blur-md ${
-        prevScrollPos === 0 ? "" : "shadow-xl shadow-slate-950"
+      className={`transition duration-300 text-lg w-full z-50 backdrop-blur-md ${
+        prevScrollPos === 0 ? "" : "fixed shadow-xl shadow-slate-950/25"
       } ${
         visible ? "visible" : "-translate-y-full shadow-xl shadow-slate-950"
       } ${isMobileHeaderOpen ? "" : "overflow-hidden"}`}
     >
       {!isMobile ? (
         <div className="w-full flex items-center justify-between py-3 px-32">
-          <Link href={"#"} className="animate-fade-in-bottom">
+          <Link href={"/"} className="animate-fade-in-bottom">
             <Image
               src={logo}
               alt=""
