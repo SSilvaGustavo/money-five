@@ -11,6 +11,8 @@ interface AppContextProps {
   setIsMobileHeaderOpen: (isMobileHeaderOpen: boolean) => void;
   isPageLoaded: boolean;
   setPageLoaded: (isPageLoaded: boolean) => void;
+  isRegisterModalOpen: boolean;
+  setIsRegisterModalOpen: (isAdModalOpen: boolean) => void;
 }
 
 export const AppContext = createContext<AppContextProps>({
@@ -22,6 +24,8 @@ export const AppContext = createContext<AppContextProps>({
   setIsMobileHeaderOpen: () => {},
   isPageLoaded: true,
   setPageLoaded: () => {},
+  isRegisterModalOpen: false,
+  setIsRegisterModalOpen: () => {},
 });
 
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
@@ -29,6 +33,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isMobileHeaderOpen, setIsMobileHeaderOpen] = useState(false);
   const [isPageLoaded, setPageLoaded] = useState(false);
+  const [isAdModalOpen, setIsAdModalOpen] = useState(false);
 
   useEffect(() => {
     if (window.location.pathname === "/") {
@@ -64,6 +69,8 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         setIsMobileHeaderOpen,
         isPageLoaded,
         setPageLoaded,
+        isRegisterModalOpen: isAdModalOpen,
+        setIsRegisterModalOpen: setIsAdModalOpen,
       }}
     >
       {children}

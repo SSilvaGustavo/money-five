@@ -46,7 +46,7 @@ const NavLink = ({ className, onClick }: NavLinkProps) => {
           </Link>
         </li>
       ))}
-          <Link href={'#'} className="py-2 px-6 rounded-md bg-primary-100 text-sm text-white hover:scale-105 transition-all">
+          <Link href={'/login'} className="py-2 px-6 rounded-md bg-primary-100 text-sm text-white hover:scale-105 transition-all">
             Login
           </Link>
     </ol>
