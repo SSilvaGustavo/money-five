@@ -30,7 +30,7 @@ export const RegisterModal = () => {
         -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg shadow-black/25
         animate-content-show"
       >
-          <Image src={logo} alt="logo" width={300} className="pl-16"/>
+          <Image src={logo} alt="logo" width={250} className=""/>
         <Dialog.Title className="text-xl text-center mt-6">
           Registre-se pra ter acesso a conteúdos exclusivos de qualidade
         </Dialog.Title>
@@ -42,7 +42,7 @@ export const RegisterModal = () => {
             </span>
             <input
               type="text"
-              className="rounded-none rounded-e-lg text-white min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
+              className="rounded-none rounded-e-lg text-black font-semibold min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
               placeholder="Seu nome"
             />
           </div>
@@ -52,7 +52,7 @@ export const RegisterModal = () => {
             </span>
             <input
               type="text"
-              className="rounded-none rounded-e-lg text-white min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
+              className="rounded-none rounded-e-lg text-black font-semibold min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
               placeholder="Email"
             />
           </div>
@@ -63,7 +63,7 @@ export const RegisterModal = () => {
             </span>
             <input
               type={show ? "text" : "password"}
-              className="rounded-none rounded-e-lg text-white min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
+              className="rounded-none rounded-e-lg text-black font-semibold min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
               placeholder="Senha"
             />
             {!show ? (
