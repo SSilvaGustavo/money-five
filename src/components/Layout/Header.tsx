@@ -27,7 +27,7 @@ interface MobileHeaderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const NavLink = ({ className, onClick }: NavLinkProps) => {
-  const menuItems = ["grafico", "noticias", "ferramentas", "sobre", "tutoriais"];
+  const menuItems = ["dashboards", "noticias", "sobre", "tutoriais"];
   return (
     <ol className="flex flex-col gap-5 lg:flex-row lg:gap-24 items-center">
       {menuItems.map((item) => (
@@ -134,7 +134,7 @@ export function Header() {
             <Image
               src={logo}
               alt=""
-              className="w-40"
+              className="w-32"
             />
           </Link>
           <nav className="flex font-semibold cursor-pointer pr-16 animate-[fade-in-bottom_0.5s_ease-out_0.7s_both] space-x-8">

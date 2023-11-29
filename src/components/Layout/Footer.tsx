@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex gap-8 justify-center items-center text-white">
-        <Image src={logo} alt="" className="w-40" />
+        <Image src={logo} alt="" className="w-36" />
         <p className="font-normal">
           MONEY FIVE 2023 @ Todos os direitos reservados
         </p>

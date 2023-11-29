@@ -14,11 +14,11 @@ export default function Login() {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col border border-gray-500 rounded-xl p-4 w-1/4 mx-auto justify-center items-center">
-        <div className="pl-20">
+        <div className="">
           <Image src={logo} alt="logo" width={250} />
         </div>
         <p className="text-xl font-bold my-4 text-primary-100">
-          Logue na Money Five
+          Logue na Dash Sphere
         </p>
         <div className="flex flex-col items-center justify-center gap-4 w-full">
           <div className="flex w-[80%]">
@@ -27,7 +27,7 @@ export default function Login() {
             </span>
             <input
               type="text"
-              className="rounded-none rounded-e-lg text-white min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
+              className="rounded-none rounded-e-lg text-black font-semibold min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
               placeholder="Email"
             />
           </div>
@@ -37,7 +37,7 @@ export default function Login() {
             </span>
             <input
               type={show ? "text" : "password"}
-              className="rounded-none rounded-e-lg text-white min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
+              className="rounded-none rounded-e-lg text-black font-semibold min-w-0 w-full border border-gray-400 text-sm p-2.5 outline-none focus:border-gray-500"
               placeholder="Senha"
             />
             {!show ? (

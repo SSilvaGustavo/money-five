@@ -21,7 +21,7 @@ export default function Noticias() {
     <div className="flex flex-col justify-center items-center gap-8">
       <MainNews />
       <div className="flex items-center gap-4 text-primary-100">
-      <TextStyle.Heading title="Demais noticias" className="text-primary-100"/>
+      <TextStyle.Heading title="Demais noticias" className="!text-primary-100"/>
       <FaSquareFull />
       </div>
       <SubNews
