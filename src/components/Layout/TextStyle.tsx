@@ -27,7 +27,7 @@ function TextHeading({ title, className }: TitleProps) {
 function TextParagraph({ children, className }: ParagraphProps) {
   return (
     <p
-      className={`text-slate-300 font-medium leading-normal tracking-tight text-lg lg:text-base ${className}`}
+      className={`text-slate-300 font-medium leading-normal tracking-tight ${className}`}
     >
       {children}
     </p>
