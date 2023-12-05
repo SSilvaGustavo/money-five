@@ -12,7 +12,7 @@ interface PricingCardProps {
 export default function PricingCard({ title, price, benefits, primary }: PricingCardProps) {
   return (
     <div className={`${primary ? 'bg-gradient-to-tr from-primary-100 to-indigo-400' : 'bg-white'} 
-    flex flex-col items-center justify-center py-10 px-12 rounded-md shadow-xl w-[19rem]`}>
+    flex flex-col items-center justify-center py-10 px-12 rounded-md shadow-2xl w-[19rem]`}>
       <h2 className={`${primary ? 'text-white' : 'text-black'} text-3xl`}>{title}</h2>
       
       <div className={`${primary ? 'text-white' : 'text-black'} flex items-center mt-6`}>
