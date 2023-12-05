@@ -1,6 +1,7 @@
 "use client";
 
 import logo from "@/assets/logo.svg";
+import { Header } from "@/components/Layout/Header";
 import Register from "@/components/Register";
 import { AppContext } from "@/context/AppContext";
 import Image from "next/image";
@@ -13,7 +14,7 @@ export default function Login() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col border border-gray-500 rounded-xl p-4 w-1/4 mx-auto justify-center items-center">
+      <div className="flex flex-col border border-gray-500 rounded-xl px-4 py-8 w-1/4 mx-auto justify-center items-center">
         <div className="">
           <Image src={logo} alt="logo" width={250} />
         </div>

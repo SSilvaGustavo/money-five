@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <main
-      className={`max-w-[1440px] mx-auto flex flex-col justify-center items-center py-8 ${
+      className={`max-w-[1440px] mx-auto flex flex-col justify-center items-center py-[3.35rem] ${
         isMobileHeaderOpen ? "blur-md" : ""
       }`}
     >
@@ -38,19 +38,23 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-8">
             <h2 className="text-4xl font-bold">
-              Equity Raising for Luxury House in san Diego
+              Transformando dados em decisões, sua visão estratégica começa aqui
             </h2>
-            <p className="text-xl">
-              Be an Investor and live your dream life , follow the links bellow
-              to read more about the project
+            <p className="text-xl text-gray-600">
+              Explore nossos Dashboards: Uma coleção diversificada de insights
+              poderosos e visuais impactantes para impulsionar sua tomada de
+              decisão.
             </p>
             <div className="flex gap-4">
-              <Link href={'/prices'} className="text-center w-[30%] bg-primary-100 py-2 px-4 text-sm rounded-md text-white font-semibold hover:scale-105 transition-all">
+              <Link
+                href={"/prices"}
+                className="text-center bg-primary-100 py-2 px-4 text-sm rounded-md text-white font-semibold hover:scale-105 transition-all"
+              >
                 Assinar um plano
               </Link>
-              <button className="w-[40%] border border-primary-100 py-2 px-4 text-sm rounded-md text-primary-100 font-semibold hover:scale-105 transition-all">
+              <Link href={"/sobre"} className=" text-center border border-primary-100 py-2 px-4 text-sm rounded-md text-primary-100 font-semibold hover:scale-105 transition-all">
                 Conheça mais sobre o projeto
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -64,7 +68,6 @@ export default function Home() {
           />
         </div>
       </div>
-      {/* <iframe title="PI" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=fcf95151-50f7-47d2-8ad3-a5d8903b4c2b&autoAuth=true&ctid=6f9e3b1e-1809-444a-81d3-82d40a928812" frameBorder="0" allowFullScreen={true}></iframe> */}
     </main>
   );
 }
