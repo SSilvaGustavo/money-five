@@ -17,12 +17,12 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-2 text-white">
           <FaEnvelope />
-          <TextStyle.Paragraph className="hover:text-white transition-colors text-sm">Contato@Dashsphere.com</TextStyle.Paragraph>
+          <TextStyle.Paragraph className="hover:text-white transition-colors text-sm">contato@moneyfive.com</TextStyle.Paragraph>
           </div>
           <div className="flex items-center gap-2 text-white">
           <FaLocationDot />
           <TextStyle.Paragraph className="hover:text-white transition-colors text-sm">
-            501 West Broadway, Suite 800, San Diego, CA 92101
+          Av. Eng. Eusébio Stevaux, 823 - Santo Amaro, São Paulo - SP, 04696-000
           </TextStyle.Paragraph>
           </div>
         </div>
