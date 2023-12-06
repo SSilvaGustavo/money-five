@@ -13,6 +13,9 @@ import logo from "@/assets/logo.svg";
 import Image from "next/image";
 import { AppContext } from "@/context/AppContext";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { usePathname } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
+import { LogoutButton } from "../LogoutButton";
 
 interface NavLinkProps {
   className?: string;
@@ -27,7 +30,12 @@ interface MobileHeaderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const NavLink = ({ className, onClick }: NavLinkProps) => {
-  const menuItems = ["dashboards", "noticias", "sobre", "tutoriais"];
+  const menuItems = ["dashboards", "noticias", "sobre"];
+  const pathName = usePathname();
+  const { data: session } = useSession();
+
+  console.log(session)
+
   return (
     <ol className="flex flex-col gap-5 lg:flex-row lg:gap-24 items-center">
       {menuItems.map((item) => (
@@ -38,17 +46,23 @@ const NavLink = ({ className, onClick }: NavLinkProps) => {
             onClick={onClick}
           >
             <div className="group flex flex-col items-center justify-center text-xl gap-1 lg:gap-0 lg:flex-row lg:text-base before:text-primary-100 before:text-right">
-              <span className="text-slate-350 font-medium group-hover:text-primary-100 capitalize transition-colors">
+              <span className={`text-slate-350 font-semibold group-hover:text-primary-100 capitalize transition-colors ${pathName === `/${item}` && 'text-primary-100'}`}>
                 {item}
               </span>
             </div>
-            <span className="h-[2px] w-0 bg-primary-100 absolute left-0 bottom-0 group-hover:w-4/5 transition-[width] hidden lg:inline-block"></span>
+            <span className={`h-[2px] w-0 bg-primary-100 absolute left-0 bottom-0 group-hover:w-4/5 transition-[width] hidden lg:inline-block ${pathName === `/${item}` && 'w-4/5'}`}></span>
           </Link>
         </li>
       ))}
+      {
+        session ? 
+      <LogoutButton /> 
+      : 
+
           <Link href={'/login'} className="py-2 px-6 rounded-md bg-primary-100 text-sm text-white hover:scale-105 transition-all">
             Login
           </Link>
+      }
     </ol>
   );
 };
@@ -129,7 +143,7 @@ export function Header() {
       } ${isMobileHeaderOpen ? "" : "overflow-hidden"}`}
     >
       {!isMobile ? (
-        <div className="w-full flex items-center justify-between py-3 px-32">
+        <div className="w-full flex items-center justify-between py-2 px-32">
           <Link href={"/"} className="animate-fade-in-bottom">
             <Image
               src={logo}
