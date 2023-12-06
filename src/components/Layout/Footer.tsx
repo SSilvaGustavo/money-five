@@ -7,7 +7,7 @@ import { FaEnvelope, FaPhone, FaLocationDot } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="relative bottom-0 w-full flex flex-col gap-6 pt-8 pb-4 px-32 mt-8 bg-secondary-300">
+    <footer className="relative bottom-0 w-full flex flex-col gap-6 pt-8 pb-5 px-32 mt-8 bg-secondary-300">
       <div className="flex w-full justify-between cursor-pointer">
         <div className="flex flex-col gap-8">
           <TextStyle.Title title="Contato"/>

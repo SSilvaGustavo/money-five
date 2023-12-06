@@ -52,7 +52,7 @@ export default function Home() {
               >
                 Assinar um plano
               </Link>
-              <Link href={"/sobre"} className=" text-center border border-primary-100 py-2 px-4 text-sm rounded-md text-primary-100 font-semibold hover:scale-105 transition-all">
+              <Link href={"/sobre"} className="text-center border border-primary-100 py-2 px-4 text-sm rounded-md text-primary-100 font-semibold hover:scale-105 transition-all">
                 Conheça mais sobre o projeto
               </Link>
             </div>
@@ -64,7 +64,7 @@ export default function Home() {
             src={homeDash}
             alt=""
             className="rounded-lg shadow-lg"
-            width={540}
+            width={640}
           />
         </div>
       </div>
