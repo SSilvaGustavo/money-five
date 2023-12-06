@@ -22,11 +22,11 @@ export default function Sobre() {
       <div className="flex justify-center items-center px-5 w-full">
         <div className="space-y-8 w-[42rem]">
           <h1 className="font-bold text-3xl">
-            Conheça a <span className="text-primary-100">Dash Sphere</span>:
+            Conheça a <span className="text-primary-100">Money Five</span>:
             Desvendando o Futuro Através da Visualização de Dados
           </h1>
           <p className="text-sm text-gray-500 font-medium">
-            Descubra o poder oculto nos números com a Dash Sphere. Líderes na
+            Descubra o poder oculto nos números com a Money Five. Líderes na
             criação e desenvolvimento de dashboards personalizados, nossa missão
             é desvendar insights estratégicos e proporcionar uma visão clara por
             meio da visualização de dados. Junte-se a nós na jornada de
@@ -55,7 +55,7 @@ export default function Sobre() {
           </div>
           <div className="w-[42rem]">
             <p className="text-gray-500 font-medium">
-              Bem-vindo à Dash Sphere, uma empresa inovadora fundada em 2023 no
+              Bem-vindo à Money Five, uma empresa inovadora fundada em 2023 no
               Brasil, com a missão de transformar dados em insights
               estratégicos. Especializados na criação e desenvolvimento de
               dashboards personalizados, estamos comprometidos em impulsionar a
@@ -72,13 +72,13 @@ export default function Sobre() {
         <div className="flex justify-evenly items-center w-full">
           <div className="w-[38rem]">
             <p className="text-gray-500 font-medium">
-              Na Dash Sphere, não somos apenas especialistas em tecnologia;
+              Na Money Five, não somos apenas especialistas em tecnologia;
               somos parceiros dedicados ao seu sucesso. Cada dashboard que
               desenvolvemos é único e personalizado para atender às necessidades
               específicas da sua empresa. Estamos comprometidos em proporcionar
               uma experiência excepcional, ajudando-o a alcançar novos patamares
               de eficiência operacional e tomada de decisão estratégica. Explore
-              um novo horizonte de oportunidades com a Dash Sphere. Juntos,
+              um novo horizonte de oportunidades com a Money Five. Juntos,
               vamos transformar seus dados em resultados tangíveis e impulsionar
               seu negócio para o futuro.
             </p>

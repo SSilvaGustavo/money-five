@@ -20,7 +20,7 @@ export default function Login() {
           <Image src={logo} alt="logo" width={250} />
         </div>
         <p className="text-xl font-bold my-4 text-primary-100">
-          Logue na Dash Sphere
+          Logue na Money Five
         </p>
         <div className="flex flex-col items-center justify-center gap-4 w-full">
           <div className="flex w-[80%]">

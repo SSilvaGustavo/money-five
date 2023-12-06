@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="flex flex-col w-[30%] gap-2">
           <TextStyle.Title title="Termos de serviço" />
           <TextStyle.Paragraph className="text-sm">
-            A Dash Sphere fornece informações e análises relacionadas a
+            A Money Five fornece informações e análises relacionadas a
             investimentos e notícias financeiras com o objetivo de educar e
             informar nossos leitores. No entanto, é crucial observar que todas
             as informações contidas neste site são fornecidas apenas para fins
@@ -49,7 +49,7 @@ export default function Footer() {
       <div className="flex gap-8 justify-center items-center text-white">
         <Image src={logo} alt="" className="w-28" />
         <p className="font-medium">
-          DASH SPHERE 2023 @ Todos os direitos reservados
+          MONEY FIVE 2023 @ Todos os direitos reservados
         </p>
       </div>
     </footer>
