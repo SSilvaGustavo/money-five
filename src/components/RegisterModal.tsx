@@ -6,15 +6,25 @@ import { FaEnvelope, FaLock, FaEye, FaEyeSlash, FaUser  } from "react-icons/fa6"
 
 import logo from "@/assets/logoWhite.svg";
 import Image from "next/image";
+import toast from "react-hot-toast";
 
 export const RegisterModal = () => {
   const { isRegisterModalOpen, setIsRegisterModalOpen } =
     useContext(AppContext);
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleCloseModal = () => {
     setIsRegisterModalOpen(false);
   };
+
+  const handleSuccess = () => {
+    setLoading(true)
+    setTimeout(() => {
+      toast.success("Usuário criado com sucesso!")
+      setLoading(false)
+    }, 1000)
+  }
 
   useEffect(() => {
     if (!isRegisterModalOpen) {
@@ -86,8 +96,10 @@ export const RegisterModal = () => {
               Cancelar
             </Dialog.Close>
             <button
-              type="submit"
-              className="flex items-center gap-3 px-5 h-12 rounded-md font-semibold bg-primary-100/80 hover:bg-primary-100 transition-colors"
+              type="button"
+              className={`flex items-center gap-3 px-5 h-12 rounded-md font-semibold bg-primary-100/80 hover:bg-primary-100 transition-colors disabled:bg-gray-500 disabled:pointer-events-none`}
+              disabled={loading}
+              onClick={() => handleSuccess()}
             >
               Registrar
             </button>
