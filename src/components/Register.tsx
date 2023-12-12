@@ -9,7 +9,7 @@ interface RegisterProps {
 export default function Register({ open, setOpen }: RegisterProps) {
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 max-sm:text-lg">
         Não tem conta?
         <Dialog.Trigger className="flex items-center text-primary-100">
           Registre-se

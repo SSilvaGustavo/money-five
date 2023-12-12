@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   ForwardedRef,
@@ -13,9 +13,9 @@ import logo from "@/assets/logo.svg";
 import Image from "next/image";
 import { AppContext } from "@/context/AppContext";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { LogoutButton } from "../LogoutButton";
 import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
-import { LogoutButton } from "../LogoutButton";
 
 interface NavLinkProps {
   className?: string;
@@ -34,8 +34,6 @@ const NavLink = ({ className, onClick }: NavLinkProps) => {
   const pathName = usePathname();
   const { data: session } = useSession();
 
-  console.log(session)
-
   return (
     <ol className="flex flex-col gap-5 lg:flex-row lg:gap-24 items-center">
       {menuItems.map((item) => (
@@ -46,23 +44,32 @@ const NavLink = ({ className, onClick }: NavLinkProps) => {
             onClick={onClick}
           >
             <div className="group flex flex-col items-center justify-center text-xl gap-1 lg:gap-0 lg:flex-row lg:text-base before:text-primary-100 before:text-right">
-              <span className={`text-slate-350 font-semibold group-hover:text-primary-100 capitalize transition-colors ${pathName === `/${item}` && 'text-primary-100'}`}>
+              <span
+                className={`text-slate-350 font-semibold group-hover:text-primary-100 capitalize transition-colors ${
+                  pathName === `/${item}` && "text-primary-100"
+                }`}
+              >
                 {item}
               </span>
             </div>
-            <span className={`h-[2px] w-0 bg-primary-100 absolute left-0 bottom-0 group-hover:w-4/5 transition-[width] hidden lg:inline-block ${pathName === `/${item}` && 'w-4/5'}`}></span>
+            <span
+              className={`h-[2px] w-0 bg-primary-100 absolute left-0 bottom-0 group-hover:w-4/5 transition-[width] hidden lg:inline-block ${
+                pathName === `/${item}` && "w-4/5"
+              }`}
+            ></span>
           </Link>
         </li>
       ))}
-      {
-        session ? 
-      <LogoutButton /> 
-      : 
-
-          <Link href={'/login'} className="py-2 px-6 rounded-md bg-primary-100 text-sm text-white hover:scale-105 transition-all">
-            Login
-          </Link>
-      }
+      {session ? (
+        <LogoutButton />
+      ) : (
+        <Link
+          href={"/login"}
+          className="px-12 py-2 lg:px-6 rounded-md bg-primary-100 text-sm text-white hover:scale-105 transition-all"
+        >
+          Login
+        </Link>
+      )}
     </ol>
   );
 };
@@ -74,14 +81,14 @@ const MobileHeader = (props: MobileHeaderProps) => {
     <aside
       {...rest}
       ref={ref}
-      className={`flex justify-center items-center fixed top-0 bottom-0 right-0 w-[75dvw] max-w-sm h-screen bg-slate-850 backdrop-blur-md translate-x-0 transition-transform ${
+      className={`flex justify-center items-center fixed top-0 bottom-0 right-0 w-[75dvw] max-w-sm h-screen bg-slate-850 backdrop-blur-md translate-x-0 transition-transform bg-secondary-300/80 text-white ${
         className ?? ""
       }`}
     >
       <div className="">
         <AiOutlineClose
           size={40}
-          className="absolute text-teal-300 top-4 right-6"
+          className="absolute text-primary-100 top-4 right-6"
           onClick={onIconClick}
         />
         <nav className="flex flex-col space-y-6">
@@ -136,8 +143,8 @@ export function Header() {
 
   return (
     <header
-      className={`transition duration-300 text-lg w-full z-50 backdrop-blur-md ${
-        prevScrollPos === 0 ? "" : "fixed shadow-xl shadow-slate-950/25"
+      className={`transition duration-300 text-lg w-full fixed z-50 backdrop-blur-md ${
+        prevScrollPos === 0 ? "" : "fixed shadow-xl shadow-slate-950/30"
       } ${
         visible ? "visible" : "-translate-y-full shadow-xl shadow-slate-950"
       } ${isMobileHeaderOpen ? "" : "overflow-hidden"}`}
@@ -145,26 +152,22 @@ export function Header() {
       {!isMobile ? (
         <div className="w-full flex items-center justify-between py-2 px-32">
           <Link href={"/"} className="animate-fade-in-bottom">
-            <Image
-              src={logo}
-              alt=""
-              className="w-32"
-            />
+            <Image src={logo} alt="" className="w-32" />
           </Link>
           <nav className="flex font-semibold cursor-pointer pr-16 animate-[fade-in-bottom_0.5s_ease-out_0.7s_both] space-x-8">
-            <NavLink/>
+            <NavLink />
           </nav>
         </div>
       ) : (
-        <div className="flex justify-between items-center">
-          <Image
-            src={logo}
-            alt=""
-            className="w-28"
-          />
+        <div className="flex justify-between items-center py-2">
+          <Link href={"/"} className="animate-fade-in-bottom">
+            <Image src={logo} alt="" className="w-28" />
+          </Link>
           <AiOutlineMenu
             size={40}
-            className={`mr-4 text-teal-300 transition-all duration-300 menu-icon`}
+            className={`mr-4 text-primary-100 transition-all duration-300 menu-icon ${
+              isMobileHeaderOpen && "hidden"
+            }`}
             onClick={toggleMenu}
           />
           <MobileHeader

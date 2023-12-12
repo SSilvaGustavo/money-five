@@ -36,8 +36,8 @@ export const RegisterModal = () => {
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 inset-0 fixed" />
       <Dialog.Content
-        className="flex items-center justify-center flex-col fixed w-[26%] bg-secondary-300 py-8 px-10 text-white top-[38%] left-1/2 
-        -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg shadow-black/25
+        className="flex items-center justify-center flex-col fixed w-[400px] bg-secondary-300 py-8 px-10 text-white top-[38%] left-1/2 
+        -translate-x-1/2 -translate-y-1/3 rounded-lg shadow-lg shadow-black/25
         animate-content-show"
       >
           <Image src={logo} alt="logo" width={250} className=""/>

@@ -23,7 +23,7 @@ export default function PricingCard({ title, price, benefits, primary }: Pricing
       <div className={`${primary ? 'text-white' : 'text-black'} flex flex-col gap-4 items-start text-sm mb-16 mt-6 h-56`}>
         {
           benefits?.map((benefit) => (
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center" key={benefit}>
             <FaCheck />
           <p>{benefit}</p>
           </div>

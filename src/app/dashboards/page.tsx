@@ -22,31 +22,31 @@ export default function Dashboards() {
     setSelectedCategory(category);
   };
 
-  console.log(selectedCategory);
-
   return (
     <div className="flex flex-col justify-center items-center gap-4">
-      <div className="flex flex-col justify-center items-center gap-2 w-full p-4 bg-primary-100">
+      <div className="flex flex-col justify-center items-center gap-2 w-full lg:w-[1440px] p-4 bg-primary-100 mt-24">
         <div className="flex items-center gap-4 text-zinc-200">
-          <TextStyle.Heading title="Central de Dashboards" className="!text-zinc-200"/>
+          <TextStyle.Heading
+            title="Central de Dashboards"
+            className="!text-zinc-200 max-sm:text-2xl"
+          />
           <FaSquareFull />
         </div>
       </div>
       <div className="flex w-full justify-center">
         <iframe
-          className="rounded-xl"
+          className="rounded-xl lg:w-[1250px] lg:h-[541px] w-[350px] h-[200px]"
           title="PI"
-          width="1250"
-          height="541.25"
           src="https://app.powerbi.com/reportEmbed?reportId=fcf95151-50f7-47d2-8ad3-a5d8903b4c2b&autoAuth=true&ctid=6f9e3b1e-1809-444a-81d3-82d40a928812&filterPaneEnabled=false&navContentPaneEnabled=false"
           frameBorder="0"
           allowFullScreen={true}
           id=""
         ></iframe>
       </div>
-      <div className="flex items-center justify-center gap-4 mt-12">
+      <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
         {buttons.map((name) => (
           <button
+            key={name}
             className={`px-4 py-2 text-white rounded-xl font-semibold hover:scale-95 transition-all ${
               selectedCategory === name.toLowerCase()
                 ? "bg-gray-700 scale-95"
@@ -58,7 +58,7 @@ export default function Dashboards() {
           </button>
         ))}
       </div>
-      <div className="grid grid-cols-2 w-full justify-items-center gap-y-12">
+      <div className="grid lg:grid-cols-2 lg:w-full justify-items-center gap-y-12 gap-x-4 p-4">
         {selectedCategory === "vendas" ? (
           <>
             <DashboardCard.Free
